@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+//import { DbserviceService } from '../services/autenthication.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,33 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomePage {
 
-  usuarioRecibido: string ="";
+  constructor(private router:Router/*, public dbtaskService:DbserviceService*/ ){
+
+    
+
+  }
+
+  selectedSegment: string = 'perfil';
+
+
+  segmentChanged($event: CustomEvent){
+    console.log($event.detail.value);
+    let direction = $event.detail.value;
+    this.selectedSegment = direction;
+   // this.router.navigate([direction]);
+  }
+
+  ionViewKillEnter(){
+    this.router.navigate(['home/perfil']);
+  }
+
+  logout(){
+    console.log("Logout");
+  }
+
+
+
+ /* usuarioRecibido: string ="";
   passwordRecibido: string ="";
   nivelEduc: string = "";
   nombre: string = "";
@@ -33,7 +60,7 @@ export class HomePage {
     this.apellidoUsuario='';
     this.nivelEducacion='';
     
-  }
+  }*/
 
   
 

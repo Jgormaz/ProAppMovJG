@@ -6,6 +6,8 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { MatSliderModule } from '@angular/material/slider';
+import { ExperienciaComponent } from '../componentes/experiencia/experiencia.component';
+import { CertificacionComponent } from '../componentes/certificacion/certificacion.component';
 
 
 @NgModule({
@@ -16,6 +18,6 @@ import { MatSliderModule } from '@angular/material/slider';
     HomePageRoutingModule,
     MatSliderModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, ExperienciaComponent, CertificacionComponent]
 })
 export class HomePageModule {}

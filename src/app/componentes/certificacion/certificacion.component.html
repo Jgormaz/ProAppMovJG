@@ -1,0 +1,20 @@
+<ion-card>
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Nombre certificado</ion-label>
+      <ion-input type="text" [(ngModel)]="nombreCert"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Fecha de obtención</ion-label>
+      <ion-input type="number" [(ngModel)]="fecha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>¿TieneVenciomiento?</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="tieneVencimiento" (ionChange)="onChangeTieneVencimiento()"></ion-checkbox>
+    </ion-item>
+    <ion-item *ngIf="tieneVencimiento">
+      <ion-label position="stacked">Fecha vencimiento</ion-label>
+      <ion-input type="number" [(ngModel)]="fechaVencimiento"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-card>

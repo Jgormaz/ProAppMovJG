@@ -3,11 +3,33 @@
     <ion-title class="titulo">
       SkeletonAPP
     </ion-title>
+    <!-- <ion-buttons slot="primary"> -->
+      <ion-button (click)="logout()" color="danger" fill="outline">
+        Salir
+        <ion-icon slot="end" name="log-out-outline"></ion-icon>
+      </ion-button>
+    <!-- </ion-buttons> -->
   </ion-toolbar>
-  <p class="subtitulo">Aquí comienza todo</p>
+  <ion-toolbar>
+    <ion-segment value="perfil" (ionChange)="segmentChanged($event)"> 
+      <ion-segment-button value="perfil">
+        <ion-icon name="home"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="segmento_experiencia">
+        <ion-icon name="briefcase-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="segmento_certificaciones">
+        <ion-icon name="school-outline"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
 </ion-header> 
 
-<ion-content [fullscreen]="true">
+<app-experiencia *ngIf="selectedSegment === 'segmento_experiencia'"></app-experiencia>
+<app-certificacion *ngIf="selectedSegment === 'segmento_certificaciones'"></app-certificacion>
+
+
+ <!--<ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title class="titulo">SkeletonAPP</ion-title>
@@ -15,7 +37,7 @@
     <p class="subtitulo">Aquí comienza todo</p>
   </ion-header>
 
-  <div id="container">
+ <div id="container">
     
     <p><strong>Bienvenido!</strong><p>
     
@@ -48,4 +70,4 @@
   </div>
 
   
-</ion-content>
+</ion-content>-->
